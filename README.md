@@ -77,23 +77,13 @@ npm install
 supabase functions serve countdown
 ```
 
-### 1.5 Start the resonate worker behind ngrok
+### 1.5 Start the resonate server
 
 ```
-ngrok http 8001
+resonate dev --system-url http://host.docker.internal:8001
 ```
 
-```
-resonate dev --system-url  <ngrok-url>
-```
-
-Example
-
-```
-resonate dev --system-url  https://583ef7749990.ngrok-free.app
-```
-
-### 1.5. Invoke the Countdown
+### 1.6. Invoke the Countdown
 
 The examples use ntfy.sh to send notifications. Create a unique channel name (to avoid receiving notifications from other users) and open the ntfy.sh channel in your browser.
 
@@ -113,7 +103,7 @@ Example
 resonate invoke countdown.1 --func countdown --arg 5 --arg 1 --arg https://ntfy.sh/resonatehq-17905 --target http://127.0.0.1:54321/functions/v1/countdown
 ```
 
-### 1.6. Inspect the execution
+### 1.7. Inspect the execution
 
 Use the `resonate tree` command to visualize the countdown execution.
 
@@ -155,7 +145,7 @@ Install the [Supabase CLI](https://supabase.com/docs/guides/local-development/cl
 supabase functions deploy countdown --project-ref <PROJECT_ID>
 ```
 
-### 2.2 Start the resonate worker behind ngrok
+### 2.2 Start the resonate server behind ngrok
 
 ```
 ngrok http 8001
