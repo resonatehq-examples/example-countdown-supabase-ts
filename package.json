@@ -1,18 +1,18 @@
 {
-  "name": "example-countdown-supabase-ts",
-  "version": "1.0.0",
-  "type": "commonjs",
-  "private": true,
-  "scripts": {
-    "fmt": "npx @biomejs/biome check --write"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "@resonatehq/supabase": "^0.1.3"
-  }
+	"name": "example-countdown-supabase-ts",
+	"version": "1.0.0",
+	"type": "commonjs",
+	"private": true,
+	"scripts": {
+		"fmt": "npx @biomejs/biome check --write"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@resonatehq/supabase": "^0.1.4"
+	}
 }

@@ -30,9 +30,4 @@ async function notify(_ctx: Context, url: string, msg: string) {
 const resonate = new Resonate();
 resonate.register(countdown);
 
-Deno.serve(async (req: Request) => {
-	const resp = await resonate.handler(req);
-	return new Response(JSON.stringify(resp), {
-		headers: { "Content-Type": "application/json", Connection: "keep-alive" },
-	});
-});
+resonate.httpHandler();
