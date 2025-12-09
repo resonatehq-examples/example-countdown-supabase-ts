@@ -1,0 +1,38 @@
+import type { Context } from "@resonatehq/sdk";
+import { Resonate } from "@resonatehq/supabase";
+
+export function* countdown(
+	ctx: Context,
+	count: number,
+	delay: number,
+	url: string,
+) {
+	for (let i = count; i > 0; i--) {
+		// send notification to ntfy.sh
+		yield* ctx.run(notify, url, `Countdown: ${i}`);
+		// sleep
+		yield* ctx.sleep(delay * 60 * 1000);
+	}
+	// send the last notification to ntfy.sh
+	yield* ctx.run(notify, url, `Done`);
+}
+
+async function notify(_ctx: Context, url: string, msg: string) {
+	await fetch(url, {
+		method: "POST",
+		body: msg,
+		headers: {
+			"Content-Type": "text/plain",
+		},
+	});
+}
+
+const resonate = new Resonate();
+resonate.register(countdown);
+
+Deno.serve(async (req: Request) => {
+	const resp = await resonate.handler(req);
+	return new Response(JSON.stringify(resp), {
+		headers: { "Content-Type": "application/json", Connection: "keep-alive" },
+	});
+});
