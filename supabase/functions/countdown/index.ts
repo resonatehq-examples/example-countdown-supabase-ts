@@ -1,5 +1,4 @@
-import type { Context } from "@resonatehq/sdk";
-import { Resonate } from "@resonatehq/supabase";
+import { type Context, Resonate } from "@resonatehq/supabase";
 
 export function* countdown(
 	ctx: Context,
