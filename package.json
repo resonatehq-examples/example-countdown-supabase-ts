@@ -13,6 +13,6 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@resonatehq/supabase": "^0.1.10"
+    "@resonatehq/supabase": "^0.1.11"
   }
 }
