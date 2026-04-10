@@ -80,7 +80,7 @@ supabase functions serve countdown
 ### 1.5 Start the resonate server
 
 ```
-resonate dev --system-url http://host.docker.internal:8001
+resonate dev --server-url http://host.docker.internal:8001
 ```
 
 ### 1.6. Invoke the Countdown
@@ -152,13 +152,13 @@ ngrok http 8001
 ```
 
 ```
-resonate dev --system-url  <ngrok-url>
+resonate dev --server-url  <ngrok-url>
 ```
 
 Example
 
 ```
-resonate dev --system-url  https://583ef7749990.ngrok-free.app
+resonate dev --server-url  https://583ef7749990.ngrok-free.app
 ```
 
 ### 2.4 Invoke the Countdown
