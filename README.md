@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="Countdown on Supabase — Resonate example" />
+</p>
+
 # Resonate Countdown on Supabase Edge Functions
 
 A *Countdown* powered by the Resonate Typescript SDK and Supabase Edge Functions. The countdown sends periodic notifications to [ntfy.sh](https://ntfy.sh/) at configurable intervals.
